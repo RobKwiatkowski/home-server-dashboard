@@ -23,17 +23,35 @@ Configuration for my Raspberry Pi home server dashboard.
 ```bash
 cp .env.example .env
 docker compose up -d
-Restart
+```
+
+## Restart
+
+```bash
 docker compose restart
-Logs
+```
+
+## Logs
+
+```bash
 docker compose logs -f
-Check disk usage
+```
+
+## Check Disk Usage
+
+```bash
 df -h
 docker system df
-Safe cleanup
+```
+
+## Safe Cleanup
+
+```bash
 docker builder prune -f
 docker system prune
 sudo apt autoremove -y
 sudo apt clean
+```
 
-Do not run docker system prune --volumes unless you are sure that unused volumes do not contain important data.
+Do not run `docker system prune --volumes` unless you are sure that unused
+volumes do not contain important data.
