@@ -8,6 +8,7 @@ Configuration for my Raspberry Pi home server dashboard.
 - Homepage start panel
 - Portainer Docker UI
 - Glances system metrics
+- MySpeed internet speed tests
 - whoami reverse proxy test service
 
 ## Local URLs
@@ -17,6 +18,7 @@ Configuration for my Raspberry Pi home server dashboard.
 - Notes: http://myhouse.local:8082
 - Portainer: http://myhouse.local:9000
 - Glances: http://myhouse.local:61208
+- MySpeed: http://myhouse.local:5216
 
 ## Setup
 

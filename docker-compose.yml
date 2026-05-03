@@ -60,6 +60,17 @@ services:
       - home_net
     restart: unless-stopped
 
+  myspeed:
+    image: germannewsmaker/myspeed:latest
+    container_name: myspeed
+    ports:
+      - "5216:5216"
+    volumes:
+      - myspeed_data:/myspeed/data
+    networks:
+      - home_net
+    restart: unless-stopped
+
 networks:
   home_net:
     name: home_net
@@ -76,3 +87,4 @@ volumes:
   caddy_data:
   caddy_config:
   portainer_data:
+  myspeed_data:
