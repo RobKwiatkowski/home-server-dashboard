@@ -4,10 +4,10 @@
         description: Aplikacja edukacyjna
         icon: mdi-school
 
-    - Home API:
+    - Notes:
         href: http://myhouse.local:8082
-        description: FastAPI backend
-        icon: mdi-api
+        description: Aplikacja notatek
+        icon: mdi-note-text
 
     - Caddy test:
         href: http://myhouse.local/whoami
@@ -30,27 +30,27 @@
         description: RPi system metrics
         icon: mdi-chart-line
 
-    - System:
-      - CPU:
-          icon: mdi-cpu-64-bit
-          widget:
-            type: glances
-            url: http://glances:61208
-            version: 4
-            metric: cpu
+- System:
+    - CPU:
+        icon: mdi-cpu-64-bit
+        widget:
+          type: glances
+          url: http://glances:61208
+          version: 4
+          metric: cpu
 
-      - Memory:
-          icon: mdi-memory
-          widget:
-            type: glances
-            url: http://glances:61208
-            version: 4
-            metric: memory
+    - Memory:
+        icon: mdi-memory
+        widget:
+          type: glances
+          url: http://glances:61208
+          version: 4
+          metric: memory
 
-      - MySpeed:
-          href: http://myhouse.local:5216
-          description: Testy predkosci internetu
-          icon: mdi-speedometer
-          widget:
-            type: myspeed
-            url: http://myspeed:5216
+    - MySpeed:
+        href: http://myhouse.local:5216
+        description: Testy predkosci internetu
+        icon: mdi-speedometer
+        widget:
+          type: myspeed
+          url: http://myspeed:5216

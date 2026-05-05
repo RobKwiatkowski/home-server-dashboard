@@ -40,7 +40,7 @@ services:
       - ./homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
-      - HOMEPAGE_ALLOWED_HOSTS=myhouse.local,localhost
+      - HOMEPAGE_ALLOWED_HOSTS=${HOMEPAGE_ALLOWED_HOSTS:-myhouse.local,localhost,127.0.0.1}
       - HOMEPAGE_VAR_PORTAINER_API_KEY=${HOMEPAGE_VAR_PORTAINER_API_KEY:-}
       - HOMEPAGE_VAR_PORTAINER_ENV_ID=${HOMEPAGE_VAR_PORTAINER_ENV_ID:-1}
     networks:
@@ -55,9 +55,9 @@ services:
     pid: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /:/host:ro
     environment:
       - GLANCES_OPT=-w --bind 0.0.0.0
-      - /:/host:ro
     networks:
       - home_net
     restart: unless-stopped

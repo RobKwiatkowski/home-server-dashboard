@@ -1,6 +1,6 @@
-# Home Server Dashboard & Infrastructure
+# Home Server Infra
 
-Configuration for my Raspberry Pi home server dashboard.
+Configuration for my Raspberry Pi home server infrastructure and dashboard.
 
 ## Services
 
@@ -30,30 +30,6 @@ docker compose up -d
 Set `HOMEPAGE_VAR_PORTAINER_API_KEY` in `.env` to enable the Portainer
 containers widget. If the widget says it cannot find the environment, set
 `HOMEPAGE_VAR_PORTAINER_ENV_ID` to the matching Portainer environment ID.
-
-## DockerHub Image
-
-GitHub Actions builds a custom Homepage image with `homepage/config/` copied
-into the image and pushes it to DockerHub.
-
-Required GitHub repository secrets:
-
-- `DOCKERHUB_USERNAME`
-- `DOCKERHUB_TOKEN`
-
-Default image name:
-
-```text
-DOCKERHUB_USERNAME/home-server-dashboard
-```
-
-The workflow publishes multi-arch images for:
-
-- `linux/amd64`
-- `linux/arm64`
-
-Tags are created automatically for the default branch, git tags, branch names,
-and commit SHA values.
 
 ## Restart
 
