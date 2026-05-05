@@ -1,0 +1,18 @@
+# Environment / secrets
+.env
+
+# Local backups
+*.working
+*.bak
+
+# Logs
+*.log
+homepage/config/logs/
+
+# Runtime / generated
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
