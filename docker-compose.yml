@@ -83,6 +83,17 @@ services:
     networks:
       - home_net
     restart: unless-stopped
+    
+  quiz-backend:
+    image: kwiaci/quiz-webapp-backend:latest
+    container_name: quiz-backend
+    restart: unless-stopped
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --root-path /quiz-api    
+    expose:
+      - "8000"
+    networks:
+      - home_net
+
 
 networks:
   home_net:
