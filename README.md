@@ -31,10 +31,18 @@ docker compose up -d
 ## Raspberry Pi IP on Homepage
 
 Homepage shows the current Raspberry Pi IP using the `rpi-ip` service.
+The image is built by GitHub Actions and pushed to DockerHub as
+`kwiaci/home-server-rpi-ip:latest`.
+
+Required GitHub repository secrets:
+
+- `DOCKERHUB_USERNAME`
+- `DOCKERHUB_TOKEN`
 
 After changing this service or the Homepage tile, recreate both containers:
 
 ```bash
+docker compose pull rpi-ip
 docker compose up -d --force-recreate rpi-ip homepage
 ```
 

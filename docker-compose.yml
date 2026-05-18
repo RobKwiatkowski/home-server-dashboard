@@ -15,12 +15,9 @@ services:
     restart: unless-stopped
 
   rpi-ip:
-    image: python:3.12-alpine
+    image: kwiaci/home-server-rpi-ip:latest
     container_name: rpi-ip
     network_mode: host
-    volumes:
-      - ./rpi-ip:/app:ro
-    command: python /app/server.py
     restart: unless-stopped
 
   whoami:
