@@ -31,6 +31,25 @@
         icon: mdi-chart-line
 
 - System:
+    - Raspberry Pi IP:
+        href: http://myhouse.local
+        description: Aktualny adres serwera
+        icon: mdi-ip-network
+        widget:
+          type: customapi
+          url: http://host.docker.internal:8099
+          refreshInterval: 30000
+          mappings:
+            - field: primary_ip
+              label: IP
+              format: text
+            - field: quiz_url
+              label: Quiz
+              format: text
+            - field: hostname_I
+              label: hostname -I
+              format: text
+
     - CPU:
         icon: mdi-cpu-64-bit
         widget:

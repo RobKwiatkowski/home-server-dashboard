@@ -9,6 +9,7 @@ Configuration for my Raspberry Pi home server infrastructure and dashboard.
 - Portainer Docker UI
 - Glances system metrics
 - MySpeed internet speed tests
+- rpi-ip current server IP helper
 - whoami reverse proxy test service
 
 ## Local URLs
@@ -25,6 +26,16 @@ Configuration for my Raspberry Pi home server infrastructure and dashboard.
 ```bash
 cp .env.example .env
 docker compose up -d
+```
+
+## Raspberry Pi IP on Homepage
+
+Homepage shows the current Raspberry Pi IP using the `rpi-ip` service.
+
+After changing this service or the Homepage tile, recreate both containers:
+
+```bash
+docker compose up -d --force-recreate rpi-ip homepage
 ```
 
 Set `HOMEPAGE_VAR_PORTAINER_API_KEY` in `.env` to enable the Portainer

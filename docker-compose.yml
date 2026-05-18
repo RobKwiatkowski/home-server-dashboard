@@ -14,6 +14,15 @@ services:
       - home_webserver_net
     restart: unless-stopped
 
+  rpi-ip:
+    image: python:3.12-alpine
+    container_name: rpi-ip
+    network_mode: host
+    volumes:
+      - ./rpi-ip:/app:ro
+    command: python /app/server.py
+    restart: unless-stopped
+
   whoami:
     image: traefik/whoami:latest
     container_name: whoami
@@ -39,6 +48,8 @@ services:
     volumes:
       - ./homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - HOMEPAGE_ALLOWED_HOSTS=${HOMEPAGE_ALLOWED_HOSTS:-myhouse.local,localhost,127.0.0.1}
       - HOMEPAGE_VAR_PORTAINER_API_KEY=${HOMEPAGE_VAR_PORTAINER_API_KEY:-}
